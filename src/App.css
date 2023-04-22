@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap");
+
+:root {
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-two: "Spectral", Georgia;
+  --black: #333;
+  --white: #ffffff;
+  --yellow: #fb1;
+  --btnCor: #764701;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--type-first);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  color: var(--black);
+  padding-top: 4rem;
+}
+
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estilizando a alça da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: var(--black); /* Cor de fundo da alça da barra de rolagem */
+}
+
+/* Estilizando a área de fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: var(--yellow); /* Cor de fundo da área de rolagem */
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  color: var(--black);
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.mainContainer {
+  margin-top: 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+  font-family: var(--type-two);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--yellow);
+
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
+}
+
+.App {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: calc(100vh + 10rem);
+}
+.AppBody {
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.VictoryContainer{
+  height: initial !important;
 }

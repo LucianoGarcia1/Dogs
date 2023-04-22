@@ -1,0 +1,22 @@
+.button{
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: .4rem;
+    background-color: var(--yellow);
+    color: var(--btnCor);
+    padding: 0.8rem 1.2rem;
+    transition: all 0.25s;
+    min-width: 8rem;
+}
+
+.button:hover,
+.button:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px var(--yellow);
+}
+
+.button:disabled{
+    opacity: 0.5;
+    cursor: wait;
+}
